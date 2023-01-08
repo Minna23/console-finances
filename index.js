@@ -86,3 +86,61 @@ var finances = [
 ['Jan-2017', 138230],
 ['Feb-2017', 671099]
 ];
+
+console.log(finances.length);
+
+console.table(finances);
+
+let total = 0
+let months = finances.length;
+for(let index = 0; index < months; index++) {
+    for(let index2 = 0; index2 < finances[index].length; index2++) {
+        
+        if (typeof finances[index][index2] == 'number'){
+            total += finances[index][index2];
+            console.log(total);
+        }
+    }
+    
+}
+
+changes = []
+for(let index = 1; index < months; index++) {
+    change = finances[index][1] - finances[index-1][1]
+    changes.push(change);
+    
+}
+
+total1 = 0
+console.log(changes);
+for(let ind = 0; ind < changes.length; ind++) {
+    total1 += changes[ind]  
+} 
+
+console.log(total1);
+
+let averageChange = total1 / changes.length;
+console.log(averageChange.toFixed(2));
+
+
+let greatestIncrease = Math.max.apply(Math, changes);
+console.log(greatestIncrease);
+
+let greatestDecrease = Math.min.apply(Math, changes);
+console.log(greatestDecrease);
+
+    
+
+
+
+
+
+
+
+
+
+console.log("Financial Analysis");
+console.log("--------------------");
+console.log("Total months: " + finances.length);
+console.log("Total: " + "$" + total);
+console.log("Average change: " + "$" + averageChange.toFixed(2));
