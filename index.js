@@ -104,12 +104,13 @@ for(let index = 0; index < months; index++) {
     
 }
 
-changes = []
+changes = ['', 0]
 for(let index = 1; index < months; index++) {
     change = finances[index][1] - finances[index-1][1]
-    changes.push(change);
+    changes.push(change, finances[index][0]);
     
 }
+console.log(changes);
 
 total1 = 0
 console.log(changes);
@@ -129,8 +130,12 @@ console.log(greatestIncrease);
 let greatestDecrease = Math.min.apply(Math, changes);
 console.log(greatestDecrease);
 
-    
-
+months1 = []
+for (let index = 0; index < months; index++) {
+    month = index[0]
+    months1.push(month)
+}    
+console.log(months);
 
 
 
